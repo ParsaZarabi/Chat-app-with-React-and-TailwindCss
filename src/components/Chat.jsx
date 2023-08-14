@@ -10,7 +10,7 @@ const style = {
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-  const Scroll = useRef();
+  const scroll = useRef();
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));
@@ -34,8 +34,8 @@ const Chat = () => {
           ))}
       </main>
       {/* send Message Component */}
-      <SendMessage />
-      <span ref={Scroll}></span>
+      <SendMessage scroll={scroll} />
+      <span ref={scroll}></span>
     </>
   );
 };

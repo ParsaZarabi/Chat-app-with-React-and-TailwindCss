@@ -19,7 +19,7 @@ function App() {
         {/* Navber */}
         <Navbar />
         {/* chat component */}
-        <Chat />
+        {user ? <Chat /> : null}
       </section>
     </div>
   );
